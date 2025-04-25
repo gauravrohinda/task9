@@ -62,6 +62,13 @@ app.get("/register", (req, res) => {
 
 app.post("/register", async (req, res) => {
   const { email, password } = req.body;
+  
+  // Validate Gmail email
+  const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  if (!gmailRegex.test(email)) {
+    return res.send("❌ Please provide a valid Gmail address.");
+  }
+
   try {
     const hash = await bcrypt.hash(password, 10);
     const newUser = new User({ email, password: hash });
