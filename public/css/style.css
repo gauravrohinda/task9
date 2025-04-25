@@ -1,93 +1,33 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+/* public/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
 
-  body {
-    height: 100vh;
-    background: linear-gradient(135deg, #dbeafe, #93c5fd);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+h1, h2 {
+  color: #333;
+}
 
-  .container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
+input, button {
+  padding: 0.5rem;
+  margin: 0.3rem 0;
+  width: 100%;
+  max-width: 400px;
+}
 
-  .container:hover {
-    transform: translateY(-5px);
-  }
+.alert {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
 
-  h2 {
-    margin-bottom: 24px;
-    color: #1e3a8a;
-    font-size: 28px;
-  }
+.alert.error {
+  background-color: #ffe5e5;
+  color: #b70000;
+}
 
-  label {
-    display: block;
-    text-align: left;
-    margin: 10px 0 6px;
-    font-weight: 500;
-    color: #1e293b;
-  }
-
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
-
-  input:focus {
-    border-color: #3b82f6;
-    outline: none;
-    box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
-  }
-
-  button[type="submit"] {
-    width: 100%;
-    padding: 14px;
-    background-color: #3b82f6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-  }
-
-  button[type="submit"]:hover {
-    background-color: #2563eb;
-  }
-
-  p {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #475569;
-  }
-
-  a {
-    color: #2563eb;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  a:hover {
-    color: #1d4ed8;
-  }
+.alert.success {
+  background-color: #e2ffe2;
+  color: #006b00;
+}
