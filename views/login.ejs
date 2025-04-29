@@ -6,136 +6,172 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Login</title>
     <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-    
-      body {
-        height: 100vh;
-        background: linear-gradient(135deg, #6b5b95, #feb47b); /* Gradient background */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    
-      .container {
-        background-color: #ffffff;
-        padding: 40px;
-        border-radius: 18px; /* Slightly more rounded corners */
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth */
-        width: 100%;
-        max-width: 420px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-    
-      .container:hover {
-        transform: translateY(-10px); /* Bigger hover effect */
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-      }
-    
-      h2 {
-        margin-bottom: 30px;
-        color: #1d4ed8; /* Bright and eye-catching color */
-        font-size: 32px; /* Larger font size for prominence */
-      }
-    
-      input[type="text"],
-      input[type="password"] {
-        width: 100%;
-        padding: 16px;
-        margin-bottom: 25px; /* Increased margin for better spacing */
-        border: 1px solid #d1d5db;
-        border-radius: 10px; /* Slightly more rounded input fields */
-        transition: border-color 0.3s, box-shadow 0.3s;
-        font-size: 16px;
-        color: #333; /* Darker text for better contrast */
-        background-color: #f9fafb; /* Subtle background color */
-      }
-    
-      input:focus {
-        border-color: #2563eb; /* Consistent blue color for focus */
-        outline: none;
-        box-shadow: 0 0 8px rgba(59, 130, 246, 0.4); /* Slightly more pronounced focus effect */
-      }
-    
-      .auth-button {
-        width: 100%;
-        padding: 16px;
-        background-color: #2563eb; /* Changed to a vibrant blue */
-        color: white;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 18px; /* Slightly larger button text */
-        transition: background-color 0.3s, transform 0.2s;
-      }
-    
-      .auth-button:hover {
-        background-color: #1d4ed8;
-        transform: scale(1.05); /* Button grows slightly on hover */
-      }
-    
-      .auth-button:active {
-        background-color: #1e40af; /* Darker blue for active state */
-        transform: scale(1); /* Reset scale when clicked */
-      }
-    
-      .auth-link {
-        display: block;
-        margin-top: 25px;
-        color: #2563eb;
-        text-decoration: none;
-        font-size: 16px;
-        transition: color 0.3s;
-      }
-    
-      .auth-link:hover {
-        color: #1d4ed8;
-        text-decoration: underline; /* Underline effect on hover */
-      }
-    
-      .container p {
-        font-size: 14px;
-        color: #6b7280; /* Light gray text */
-      }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #6b5b95, #feb47b); /* Gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 18px; /* More rounded corners */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth */
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px); /* Bigger hover effect */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #1d4ed8; /* Bright color for headings */
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 5px;
+            display: block;
+            text-align: left;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 25px; /* Increased margin for better spacing */
+            border: 1px solid #d1d5db;
+            border-radius: 10px; /* Rounded input fields */
+            font-size: 16px;
+            color: #333;
+            background-color: #f9fafb;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+            outline: none;
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background-color: #1e40af;
+            transform: scale(1);
+        }
+
+        .auth-link {
+            display: block;
+            margin-top: 20px;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .auth-link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .container p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+                max-width: 100%;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 14px;
+            }
+        }
     </style>
-    
 </head>
 <body>
 
   <form action="/login" method="POST">
-    <h2>Login</h2>
+    <div class="container">
+        <h2>Login</h2>
 
-    <!-- Display error message -->
-    <% if (typeof errorMessage !== 'undefined') { %>
-      <div style="color: red; margin-bottom: 15px;"><%= errorMessage %></div>
-    <% } %>
+        <!-- Display error message -->
+        <% if (typeof errorMessage !== 'undefined') { %>
+            <div class="error-message"><%= errorMessage %></div>
+        <% } %>
 
-    <label for="email">Email (Gmail)</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      required
-      pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
-      placeholder="yourname@gmail.com"
-    />
+        <label for="email">Email (Gmail)</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+          placeholder="yourname@gmail.com"
+        />
 
-    <label for="password">Password</label>
-    <input
-      type="password"
-      id="password"
-      name="password"
-      required
-      placeholder="Enter your password"
-    />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Enter your password"
+        />
 
-    <button type="submit">Login</button>
+        <button type="submit">Login</button>
+        
+        <a href="/register" class="auth-link">Don't have an account? Register here</a>
+    </div>
   </form>
 
 </body>
