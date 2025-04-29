@@ -16,10 +16,7 @@ app.use(session({
 }));
 
 // MongoDB Connection
-mongoose.connect("mongodb+srv://gjain0279:9r28zn14IYSs5Lwh@task-7.ostklop.mongodb.net/?retryWrites=true&w=majority&appName=task-7", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
+mongoose.connect("mongodb+srv://gjain0279:9r28zn14IYSs5Lwh@task-7.ostklop.mongodb.net/?retryWrites=true&w=majority&appName=task-7").then(() => {
   console.log("✅ Connected to MongoDB successfully.");
 }).catch(err => {
   console.error("❌ MongoDB connection error:", err);

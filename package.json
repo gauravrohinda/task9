@@ -1,0 +1,31 @@
+{
+  "name": "task9",
+  "version": "1.0.0",
+  "description": "moongo\r npm i\r npm start \r npm install connect-flash\r  npm install mongoose express dotenv ejs body-parser\r   npm install mongodb",
+  "main": "index.js",
+ "scripts": {
+  "main": "node app.js"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gauravrohinda/task9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gauravrohinda/task9/issues"
+  },
+  "homepage": "https://github.com/gauravrohinda/task9#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^2.2.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.14.0"
+  },
+  "keywords": []
+}
