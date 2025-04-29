@@ -62,6 +62,8 @@ app.post("/register", async (req, res) => {
   
   // Validate Gmail email
   const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,8}$/;
+
   if (!gmailRegex.test(email)) {
     return res.send("❌ Please provide a valid Gmail address.");
   }

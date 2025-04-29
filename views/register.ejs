@@ -1,107 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Register</title>
-    <style>
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-    
-        body {
-          height: 100vh;
-          background: linear-gradient(135deg, #dbeafe, #93c5fd);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-    
-        .container {
-          background-color: white;
-          padding: 40px;
-          border-radius: 16px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-          width: 100%;
-          max-width: 400px;
-          text-align: center;
-          transition: transform 0.3s ease;
-        }
-    
-        .container:hover {
-          transform: translateY(-5px);
-        }
-    
-        h2 {
-          margin-bottom: 24px;
-          color: #1e3a8a;
-          font-size: 28px;
-        }
-    
-        input[type="text"],
-        input[type="password"] {
-          width: 100%;
-          padding: 14px;
-          margin-bottom: 20px;
-          border: 1px solid #cbd5e1;
-          border-radius: 8px;
-          transition: border-color 0.3s, box-shadow 0.3s;
-        }
-    
-        input:focus {
-          border-color: #3b82f6;
-          outline: none;
-          box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
-        }
-    
-        .auth-button {
-          width: 100%;
-          padding: 14px;
-          background-color: #3b82f6;
-          color: white;
-          border: none;
-          border-radius: 8px;
-          cursor: pointer;
-          font-weight: 600;
-          font-size: 16px;
-          transition: background-color 0.3s;
-        }
-    
-        .auth-button:hover {
-          background-color: #2563eb;
-        }
-    
-        .auth-link {
-          display: block;
-          margin-top: 20px;
-          color: #2563eb;
-          text-decoration: none;
-          font-size: 14px;
-          transition: color 0.3s;
-        }
-    
-        .auth-link:hover {
-          color: #1d4ed8;
-        }
-      </style>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6f42c1, #00bcd4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+  
+    form {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      transition: all 0.3s ease;
+    }
+  
+    form:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    }
+  
+    h2 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+  
+    input {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #f7f7f7;
+      transition: border-color 0.3s ease;
+    }
+  
+    input:focus {
+      border-color: #00bcd4;
+      outline: none;
+    }
+  
+    button {
+      padding: 12px;
+      width: 100%;
+      background: #6f42c1;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+  
+    button:hover {
+      background: #5a34a0;
+    }
+  
+    button:active {
+      background: #4c2a7a;
+    }
+  
+    button:focus {
+      outline: none;
+    }
+  </style>
+  
 </head>
+
 <body>
-    <div class="container">
-        <form action="/register" method="POST">
-            <h2>Register</h2>
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+  <form action="/register" method="POST">
+    <h2>Create Account</h2>
 
-            <button type="submit">Register</button>
-            <p>Already have an account? <a href="/login">Login</a></p>
-        </form>
-    </div>
-</body>
+    <!-- Display error message -->
+    <% if (typeof errorMessage !=='undefined' ) { %>
+      <div style="color: red; margin-bottom: 15px;">
+        <%= errorMessage %>
+      </div>
+      <% } %>
+
+        <label for="email">Email (Gmail only)</label>
+        <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@gmail\.com" required
+          placeholder="yourname@gmail.com" />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,8}"
+          title="6–8 characters, with at least one uppercase, one lowercase letter, and one number." required
+          placeholder="e.g. Abcd12" />
+
+        <button type="submit">Register</button>
+  </form>
+
 </html>

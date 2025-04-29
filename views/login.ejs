@@ -6,102 +6,137 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Login</title>
     <style>
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
     
-        body {
-          height: 100vh;
-          background: linear-gradient(135deg, #dbeafe, #93c5fd);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+      body {
+        height: 100vh;
+        background: linear-gradient(135deg, #6b5b95, #feb47b); /* Gradient background */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     
-        .container {
-          background-color: white;
-          padding: 40px;
-          border-radius: 16px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-          width: 100%;
-          max-width: 400px;
-          text-align: center;
-          transition: transform 0.3s ease;
-        }
+      .container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 18px; /* Slightly more rounded corners */
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth */
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
     
-        .container:hover {
-          transform: translateY(-5px);
-        }
+      .container:hover {
+        transform: translateY(-10px); /* Bigger hover effect */
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+      }
     
-        h2 {
-          margin-bottom: 24px;
-          color: #1e3a8a;
-          font-size: 28px;
-        }
+      h2 {
+        margin-bottom: 30px;
+        color: #1d4ed8; /* Bright and eye-catching color */
+        font-size: 32px; /* Larger font size for prominence */
+      }
     
-        input[type="text"],
-        input[type="password"] {
-          width: 100%;
-          padding: 14px;
-          margin-bottom: 20px;
-          border: 1px solid #cbd5e1;
-          border-radius: 8px;
-          transition: border-color 0.3s, box-shadow 0.3s;
-        }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 16px;
+        margin-bottom: 25px; /* Increased margin for better spacing */
+        border: 1px solid #d1d5db;
+        border-radius: 10px; /* Slightly more rounded input fields */
+        transition: border-color 0.3s, box-shadow 0.3s;
+        font-size: 16px;
+        color: #333; /* Darker text for better contrast */
+        background-color: #f9fafb; /* Subtle background color */
+      }
     
-        input:focus {
-          border-color: #3b82f6;
-          outline: none;
-          box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
-        }
+      input:focus {
+        border-color: #2563eb; /* Consistent blue color for focus */
+        outline: none;
+        box-shadow: 0 0 8px rgba(59, 130, 246, 0.4); /* Slightly more pronounced focus effect */
+      }
     
-        .auth-button {
-          width: 100%;
-          padding: 14px;
-          background-color: #3b82f6;
-          color: white;
-          border: none;
-          border-radius: 8px;
-          cursor: pointer;
-          font-weight: 600;
-          font-size: 16px;
-          transition: background-color 0.3s;
-        }
+      .auth-button {
+        width: 100%;
+        padding: 16px;
+        background-color: #2563eb; /* Changed to a vibrant blue */
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 18px; /* Slightly larger button text */
+        transition: background-color 0.3s, transform 0.2s;
+      }
     
-        .auth-button:hover {
-          background-color: #2563eb;
-        }
+      .auth-button:hover {
+        background-color: #1d4ed8;
+        transform: scale(1.05); /* Button grows slightly on hover */
+      }
     
-        .auth-link {
-          display: block;
-          margin-top: 20px;
-          color: #2563eb;
-          text-decoration: none;
-          font-size: 14px;
-          transition: color 0.3s;
-        }
+      .auth-button:active {
+        background-color: #1e40af; /* Darker blue for active state */
+        transform: scale(1); /* Reset scale when clicked */
+      }
     
-        .auth-link:hover {
-          color: #1d4ed8;
-        }
-      </style>
+      .auth-link {
+        display: block;
+        margin-top: 25px;
+        color: #2563eb;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+    
+      .auth-link:hover {
+        color: #1d4ed8;
+        text-decoration: underline; /* Underline effect on hover */
+      }
+    
+      .container p {
+        font-size: 14px;
+        color: #6b7280; /* Light gray text */
+      }
+    </style>
+    
 </head>
 <body>
-    <div class="container">
-        <form action="/login" method="POST">
-            <h2>Login</h2>
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+  <form action="/login" method="POST">
+    <h2>Login</h2>
 
-            <button type="submit">Login</button>
-            <p>Don't have an account? <a href="/register">Register</a></p>
-        </form>
-    </div>
+    <!-- Display error message -->
+    <% if (typeof errorMessage !== 'undefined') { %>
+      <div style="color: red; margin-bottom: 15px;"><%= errorMessage %></div>
+    <% } %>
+
+    <label for="email">Email (Gmail)</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+      placeholder="yourname@gmail.com"
+    />
+
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      required
+      placeholder="Enter your password"
+    />
+
+    <button type="submit">Login</button>
+  </form>
+
 </body>
 </html>
